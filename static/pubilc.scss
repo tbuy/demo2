@@ -1,0 +1,61 @@
+$red: rgb(255, 0, 54);
+$border: #ccc;
+$word: #ccc;
+
+
+//定位全屏
+@mixin allcover {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+//定位上下左右居中
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin ct {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+//定位左右居中
+@mixin cl {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+//宽高
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+//省略 ...
+@mixin ellipsis {
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+// 2行省略
+@mixin multy_ellipsis($line) {
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+}
+
+//点击效果
+.u_touch:active {
+    opacity: 0.6;
+    transition: opacity .3s;
+}
