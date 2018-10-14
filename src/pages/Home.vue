@@ -2,7 +2,7 @@
     <div class="home">
         <div class="header">
             <div class="header-top">
-                <div>菜单</div>
+                <div @click="goNavtab">菜单</div>
                 <div>logo</div>
                 <div>登录</div>
             </div>
@@ -77,6 +77,11 @@
             Banner,
             Stick,
             Time
+        },
+        methods:{
+            goNavtab(){
+                this.$router.push('./Navtab')
+            }
         }
     }
 
@@ -208,7 +213,7 @@
             margin-top: 0.4rem;
             border: 1px solid $border;
             box-sizing: border-box;
-            width: 8rem;
+            width: 48%;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
