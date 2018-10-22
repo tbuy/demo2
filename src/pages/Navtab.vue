@@ -162,6 +162,7 @@
     .nav {
         height: 100vh;
         overflow-y: auto;
+        width: 30%;
         & .nav-item {
             padding: 0 1rem;
             height: 3rem;
@@ -178,6 +179,7 @@
 
     .content {
         padding: 1rem;
+        width: 70%;
         background-color: #fff;
         box-sizing: border-box;
     }

@@ -1,8 +1,8 @@
 $red: rgb(255, 0, 54);
 $border: #ccc;
 $word: #ccc;
-
-
+//标准字号
+$fontSize: 0.8rem;
 //定位全屏
 @mixin allcover {
     position: absolute;
@@ -58,4 +58,37 @@ $word: #ccc;
 .u_touch:active {
     opacity: 0.6;
     transition: opacity .3s;
+}
+
+//红背景登录按钮
+.login_bg_red {
+    width: 94%;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    text-align: center;
+    margin: 0.8rem auto;
+    color: #d4d4d4;
+    background-color: #ff0036;
+}
+
+//红框登录按钮
+.login_border_red {
+    border: 1px solid #f40;
+    color: #f40;
+    width: 7rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    border-radius: 5px;
+    margin: 1.5rem auto;
+    text-align: center;
+}
+
+//登录header
+.login_header {
+    width: 100%;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    background-color: #f7f7f8;
+    border-bottom: 1px solid #c8c8c8;
+    text-align: center;
 }

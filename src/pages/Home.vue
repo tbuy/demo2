@@ -4,7 +4,7 @@
             <div class="header-top">
                 <div @click="goNavtab">菜单</div>
                 <div>logo</div>
-                <div>登录</div>
+                <div @click="goLogin">登录</div>
             </div>
             <div class="header-bottom">
                 <img src="../assets/search.png" alt="">
@@ -80,7 +80,10 @@
         },
         methods:{
             goNavtab(){
-                this.$router.push('./Navtab')
+                this.$router.push('./navtab')
+            },
+            goLogin(){
+                this.$router.push('./login')
             }
         }
     }
