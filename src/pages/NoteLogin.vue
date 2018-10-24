@@ -7,8 +7,10 @@
                 <input type="text" placeholder="请输入手机号码">
             </div>
             <div class="password">
-                <div class="left code">短信校验码</div>
-                <input type="text" placeholder="短信校验码" class="codeInput">
+                <div class="password-content">
+                    <div class="left code">短信校验码</div>
+                    <input type="text" placeholder="短信校验码" class="codeInput">
+                </div>
                 <div class="getCode">获取短信校验码</div>
             </div>
         </div>
@@ -33,6 +35,8 @@
         font-size: $fontSize;
         background-color: #f0f0f0;
         height: 100vh;
+        max-width: $maxWidth;
+        margin: 0 auto;
     }
 
     .form {
@@ -50,9 +54,13 @@
         & .password {
             padding: 0 0.8rem;
             display: flex;
+            justify-content: space-between;
             height: 2.5rem;
             line-height: 2.5rem;
             box-sizing: border-box;
+            & .password-content {
+                display: flex;
+            }
         }
         & .left {
             width: 4rem;

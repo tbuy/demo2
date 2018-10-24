@@ -4,9 +4,7 @@ import Home from '../pages/Home.vue'
 import Navtab from '../pages/Navtab.vue'
 import Login from '../pages/Login.vue'
 import NoteLogin from '../pages/NoteLogin.vue'
-
-
-
+import Search from '../pages/Search.vue'
 
 Vue.use(Router)
 
@@ -23,8 +21,9 @@ export default new Router({
         }, {
             path: '/noteLogin',
             component: NoteLogin
+        }, {
+            path: '/search',
+            component: Search
         }
-
-
     ]
 })

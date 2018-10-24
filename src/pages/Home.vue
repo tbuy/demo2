@@ -93,7 +93,7 @@
 <style lang="scss" rel="stylesheet/scss" scoped>
     @import '../../static/pubilc.scss';
     .home {
-        max-width: 21rem;
+        max-width: $maxWidth;
         margin: 0 auto;
     }
 

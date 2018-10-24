@@ -22,7 +22,7 @@
 <script>
     export default {
         methods: {
-            goNoteLogin(){
+            goNoteLogin() {
                 this.$router.push('./noteLogin')
             }
         }
@@ -35,6 +35,8 @@
         font-size: $fontSize;
         background-color: #f0f0f0;
         height: 100vh;
+        max-width: $maxWidth;
+        margin: 0 auto;
     }
 
     .form {

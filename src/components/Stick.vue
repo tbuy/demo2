@@ -8,6 +8,9 @@
     export default {
         methods: {
             backTop(){
+                setInterval(()=>{
+
+                },100)
                 window.scrollTo(0,0)
             }
         }
@@ -21,13 +24,14 @@
       right: 1rem;
       bottom: 1rem;
       background-color: rgba(255,255,255,0.7);
-      width: 2.5rem;
-      height: 2.5rem;
-      line-height: 2.5rem;
+      width: 2rem;
+      height: 2rem;
+      line-height: 2rem;
       border-radius: 50%;
       overflow: hidden;
       border: 1px solid $border;
           text-align: center;
+          cursor: pointer;
       & img{
           width: 70%;
           height: 70%;

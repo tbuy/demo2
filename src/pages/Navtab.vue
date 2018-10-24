@@ -140,7 +140,7 @@
 <style lang="scss" rel="stylesheet/scss" scoped>
     @import '../../static/pubilc.scss';
     .navtab {
-        max-width: 21rem;
+        max-width: $maxWidth;
         margin: 0 auto;
         background-color: #eee;
         height: 100vh;
