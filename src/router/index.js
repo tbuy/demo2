@@ -5,6 +5,8 @@ import Navtab from '../pages/Navtab.vue'
 import Login from '../pages/Login.vue'
 import NoteLogin from '../pages/NoteLogin.vue'
 import Search from '../pages/Search.vue'
+import Goods from '../pages/Goods.vue'
+
 
 Vue.use(Router)
 
@@ -24,6 +26,11 @@ export default new Router({
         }, {
             path: '/search',
             component: Search
+        }, {
+            path: '/goods',
+            component: Goods
+
         }
+
     ]
 })

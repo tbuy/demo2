@@ -6,7 +6,7 @@
                 <div>logo</div>
                 <div @click="goLogin">登录</div>
             </div>
-            <div class="header-bottom">
+            <div class="header-bottom" @click="goSearch">
                 <img src="../assets/search.png" alt="">
                 <input type="text" placeholder="搜索商品，品牌">
             </div>
@@ -41,7 +41,7 @@
         <div class="handpick">
             <div class="pub-title">为你精选</div>
             <div class="handpick-content">
-                <div class="handpick-item" v-for="item in 5" :key="item.id">
+                <div class="handpick-item" v-for="item in 5" :key="item.id" @click="goGoods(item)">
                     <img src="../assets/2.png" alt="">
                     <span class="title">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span>
                     <span class="pub-price">￥39</span>
@@ -84,6 +84,12 @@
             },
             goLogin(){
                 this.$router.push('./login')
+            },
+            goSearch(){
+                this.$router.push('./search')
+            },
+            goGoods(){
+                this.$router.push('./goods')
             }
         }
     }
