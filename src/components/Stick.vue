@@ -8,9 +8,6 @@
     export default {
         methods: {
             backTop(){
-                setInterval(()=>{
-
-                },100)
                 window.scrollTo(0,0)
             }
         }

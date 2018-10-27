@@ -29,6 +29,32 @@
                     <div>四川成都</div>
                 </div>
             </div>
+            <div class="evaluate">
+                <div class="title">
+                    <div class="fl">商品评价（22）</div>
+                    <div class="fr">查看全部></div>
+                </div>
+                <div class="tag">
+                    <span>商品评价（22）</span>
+                    <span>商品评价（22）</span>
+                    <span>商品评价（22）</span>
+                </div>
+                <div class="evaluate-item">
+                    <div>
+                        <img src="../assets/search.png" alt="">
+                        <span class="name">樱木**花道</span>
+                    </div>
+                    <div class="evaluate-content">四周是皮的，白色区域感觉是化纤面料的，不知道脏了是否容易清洗或是用化学物品能否伤及面料 美观达标 轻便达标 舒适度达标</div>
+                    <div class="time">2018-10-22 颜色分类:5858米白内里加绒;尺码:38</div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="title">—————— 详情 ——————</div>
+                <div class="content">
+                    <div class="subtitile">商品图片</div>
+                    <img src="../assets/3.png" v-for="item in 5" :key="item.id">
+                </div>
+            </div>
         </div>
         <div class="footer">
             <div class="left">
@@ -150,9 +176,80 @@
             font-size: 0.5rem;
             justify-content: space-between;
             margin-top: 0.3rem;
-             color: #888;
+            color: #888;
         }
 
+    }
+
+    .evaluate {
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+        box-sizing: border-box;
+        background-color: #fff;
+        & .title {
+            font-size: 0.7rem;
+            line-height: 1rem;
+            height: 1rem;
+        }
+        & .tag {
+            display: flex;
+            font-size: 0.5rem;
+            margin-top: 0.5rem;
+            & span {
+                background-color: #FEE;
+                color: #666;
+                padding: 0.2rem 0.5rem;
+                border-radius: 0.5rem;
+                margin-right: 0.3rem;
+
+            }
+        }
+        & .evaluate-item {
+            line-height: 2rem;
+            & img {
+                width: 1rem;
+                height: 1rem;
+                vertical-align: middle;
+            }
+            & .name {
+                margin-left: 0.2rem;
+                font-size: 0.6rem;
+                vertical-align: middle;
+            }
+        }
+        & .evaluate-content {
+            @include multy_ellipsis(2);
+            font-size: 0.6rem;
+            line-height: 0.8rem;
+        }
+        & .time {
+            font-size: 0.5rem;
+            color: #999;
+            @include ellipsis;
+            line-height: 1.2rem;
+        }
+    }
+
+    .details {
+        background-color:#eee;
+        .title {
+            line-height:1.8rem;
+            text-align: center;
+            font-size: 0.7rem;
+        }
+        .content {
+            background-color: #fff;
+            font-size: 0.7rem;
+            & .subtitile {
+                line-height: 2rem;
+                padding: 0 0.5rem;
+            }
+            & img {
+                width: 100%;
+                height: auto;
+
+            }
+        }
     }
 
     .footer {

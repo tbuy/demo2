@@ -6,6 +6,7 @@ import Login from '../pages/Login.vue'
 import NoteLogin from '../pages/NoteLogin.vue'
 import Search from '../pages/Search.vue'
 import Goods from '../pages/Goods.vue'
+import Order from '../pages/Order.vue'
 
 
 Vue.use(Router)
@@ -29,8 +30,11 @@ export default new Router({
         }, {
             path: '/goods',
             component: Goods
-
+        }, {
+            path: '/order',
+            component: Order
         }
+
 
     ]
 })

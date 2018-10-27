@@ -2,9 +2,13 @@
     <div class="home">
         <div class="header">
             <div class="header-top">
-                <div @click="goNavtab">菜单</div>
+                <div @click="goNavtab">
+                    <img src="../assets/menu.png" alt="">
+                </div>
                 <div>logo</div>
-                <div @click="goLogin">登录</div>
+                <div @click="goLogin">
+                    <img src="../assets/login.png" alt="">
+                </div>
             </div>
             <div class="header-bottom" @click="goSearch">
                 <img src="../assets/search.png" alt="">
@@ -70,7 +74,8 @@
                     {
                         image: image1
                     },
-                ]
+                ],
+                offsetTop: 0
             }
         },
         components: {
@@ -91,7 +96,7 @@
             goGoods(){
                 this.$router.push('./goods')
             }
-        }
+        },
     }
 
 </script>
@@ -104,6 +109,11 @@
     }
 
     .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9;
         background-color: $red;
         padding: 0 1rem;
         & .header-top {
@@ -113,7 +123,11 @@
             justify-content: space-between;
             font-size: 0.8rem;
             color: #fff;
-
+            & img {
+                width: 0.8rem;
+                height: 0.8rem;
+                vertical-align: middle;
+            }
         }
         & .header-bottom {
             height: 2rem;
@@ -138,7 +152,7 @@
     }
 
     .nav {
-        margin-top: 0.5rem;
+        margin-top: 4.5rem;
         display: flex;
         justify-content: space-between;
         font-size: 0.7rem;
