@@ -1,18 +1,20 @@
 <template>
     <div class="home">
         <div class="header">
-            <div class="header-top">
-                <div @click="goNavtab">
+            <div class="header-wrapper" :style="{height: headerHeight + 'rem'}">
+                <div @click="goNavtab" class="menu">
                     <img src="../assets/menu.png" alt="">
                 </div>
-                <div>logo</div>
-                <div @click="goLogin">
+                <div class="middle">
+                    <div class="logo" :style="{height: headerHeight==4?'2rem': '0'}">商城</div>
+                    <div class="search" @click="goSearch" :style="{width: headerHeight==4?'100%': '80%'}">
+                        <img src="../assets/search.png">
+                        <input type="text" placeholder="搜索商品，品牌">
+                    </div>
+                </div>
+                <div @click="goLogin" class="login">
                     <img src="../assets/login.png" alt="">
                 </div>
-            </div>
-            <div class="header-bottom" @click="goSearch">
-                <img src="../assets/search.png" alt="">
-                <input type="text" placeholder="搜索商品，品牌">
             </div>
         </div>
         <div class="nav">
@@ -30,7 +32,7 @@
                 <div class="sale-title">
                     <div>限时抢购</div>
                     <div>
-                        <Time></Time>
+                        <Time time="02:30:00"></Time>
                     </div>
                 </div>
                 <div class="sale-content">
@@ -75,7 +77,7 @@
                         image: image1
                     },
                 ],
-                offsetTop: 0
+                headerHeight: 4
             }
         },
         components: {
@@ -83,19 +85,30 @@
             Stick,
             Time
         },
-        methods:{
-            goNavtab(){
+        methods: {
+            goNavtab() {
                 this.$router.push('./navtab')
             },
-            goLogin(){
+            goLogin() {
                 this.$router.push('./login')
             },
-            goSearch(){
+            goSearch() {
                 this.$router.push('./search')
             },
-            goGoods(){
+            goGoods() {
                 this.$router.push('./goods')
-            }
+            },
+            handleScroll() {
+                var _scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+                if (_scrollTop > 80) {
+                    this.headerHeight = 2
+                } else {
+                    this.headerHeight = 4
+                }
+            },
+        },
+        mounted() {
+            window.addEventListener('scroll', this.handleScroll)
         },
     }
 
@@ -109,6 +122,8 @@
     }
 
     .header {
+        max-width: $maxWidth;
+        margin: 0 auto;
         position: fixed;
         top: 0;
         left: 0;
@@ -116,39 +131,82 @@
         z-index: 9;
         background-color: $red;
         padding: 0 1rem;
-        & .header-top {
-            height: 2rem;
-            line-height: 2rem;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8rem;
-            color: #fff;
-            & img {
-                width: 0.8rem;
-                height: 0.8rem;
-                vertical-align: middle;
-            }
-        }
-        & .header-bottom {
-            height: 2rem;
+        overflow: hidden;
+        & .header-wrapper {
             position: relative;
-            & input {
-                width: 100%;
-                height: 1.6rem;
-                line-height: 1.6rem;
-                border: 0 none;
-                padding-left: 1.6rem;
-                box-sizing: border-box;
-                border-radius: 0.2rem;
-            }
-            & img {
-                width: 0.8rem;
-                height: 0.8rem;
+            width: 100%;
+            height: 4rem;
+            transition: all 0.2s;
+            & .menu {
+                line-height: 2rem;
+                font-size: 0.8rem;
                 position: absolute;
-                left: 0.3rem;
-                top: 0.4rem;
+                left: 0;
+                z-index: 2;
+                cursor: pointer;
+                & img {
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    vertical-align: middle;
+                }
+            }
+            & .login {
+                line-height: 2rem;
+                font-size: 0.8rem;
+                position: absolute;
+                right: 0;
+                z-index: 2;
+                cursor: pointer;
+                & img {
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    vertical-align: middle;
+                }
+            }
+            & .middle {
+                width: 100%;
+                height: 4rem;
+                position: absolute;
+            }
+            & .logo {
+                margin: 0 auto;
+                width: 80%;
+                color: #fff;
+                height: 2rem;
+                line-height: 2rem;
+                font-size: 0.8rem;
+                text-align: center;
+                transition: all 0.2s;
+            }
+            & .search {
+                margin: 0 auto;
+                height: 2rem;
+                position: relative;
+                width: 80%;
+                transition: all 0.2s;
+                & input {
+                    width: 100%;
+                    height: 1.6rem;
+                    line-height: 1.6rem;
+                    border: 0 none;
+                    padding-left: 1.6rem;
+                    box-sizing: border-box;
+                    border-radius: 0.2rem;
+                    margin-top: 0.2rem;
+                }
+                & img {
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    position: absolute;
+                    left: 0.3rem;
+                    top: 0.6rem;
+                }
             }
         }
+
+
+
+
     }
 
     .nav {
